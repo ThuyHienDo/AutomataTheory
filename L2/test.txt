@@ -1,0 +1,15 @@
+INT mephi = 5;
+INT mep = 3;
+mephi := mephi + mep;
+print mephi;
+
+
+
+
+
+
+
+
+
+
+
