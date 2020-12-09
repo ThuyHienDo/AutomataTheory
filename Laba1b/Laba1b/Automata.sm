@@ -1,0 +1,80 @@
+%start Map1::Start
+%class AppClass
+%header AppClass.h
+
+%map Map1
+
+%%
+Start
+{
+	Letter		FirstState	{pushHeadline(); }
+}
+
+FirstState
+{
+	Letter		FirstState	{pushHeadline(); }
+	Colon		StateA		{check();}
+}
+
+StateA
+{
+	Slash		StateB		{}
+}
+StateB
+{
+	Slash		User		{}
+}
+
+User
+{
+	Letter		User		{add(); inc(); less(20); }
+	At			Server		{clear(); }
+}
+
+Server
+{
+	Letter		Server			{inc(); less(20); }
+	Dot			ZoneorDomain	{checkServer(); clear();incDot(); }
+}
+
+ZoneorDomain
+{
+	Letter		ZoneorDomain	{clearDot(); inc(); less(21); }
+	Dot			ZoneorDomain	{clear(); checkDot(); incDot(); }
+	Devider		Ending			{checkZone(); }
+	EOS			Ending			{checkZone(); }
+}
+
+Ending
+{
+	Devider		Ending		{}
+	EOS			OK			{Acceptable(); }
+}
+
+OK
+{}
+
+Error
+{
+	Devider		Error		{Unacceptable(); }
+	EOS			Error		{Unacceptable(); }
+	Dot			Error		{Unacceptable(); }
+	Letter		Error		{Unacceptable(); }
+	At			Error		{Unacceptable(); }
+	Slash		Error		{Unacceptable(); }
+	Colon		Error		{Unacceptable(); }
+	Unknown		Error		{Unacceptable(); }
+}
+
+Default
+{
+	Devider		Error		{Unacceptable(); }
+	EOS			Error		{Unacceptable(); }
+	Dot			Error		{Unacceptable(); }
+	Letter		Error		{Unacceptable(); }
+	At			Error		{Unacceptable(); }
+	Slash		Error		{Unacceptable(); }
+	Colon		Error		{Unacceptable(); }
+	Unknown		Error		{Unacceptable(); }
+}
+%%
