@@ -1,0 +1,5 @@
+﻿  Flex.cpp
+g:\documents\automata\laba1c\laba1c\flex.cpp(26): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+g:\documents\automata\laba1c\laba1c\flex.cpp(1264): warning C4273: 'isatty': inconsistent dll linkage
+  c:\program files (x86)\windows kits\10\include\10.0.17134.0\ucrt\corecrt_io.h(491): note: see previous definition of 'isatty'
+  Laba1c.vcxproj -> G:\Documents\Automata\Laba1c\Debug\Laba1c.exe
